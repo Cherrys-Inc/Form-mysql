@@ -2,14 +2,17 @@ import React,{useState} from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import "./display.css"
 
 const Display = (props) => {
-    const [state,setState]=useState("")
-    const navigate=useNavigate();
+    const [state,setState] = useState("")
+    const navigate = useNavigate();
+    
+    const params = useParams()
     
     useEffect(() => {
-        axios.get('http://localhost:5000/display/'+props.email)
+        axios.get('http://localhost:5000/display/'+params.em)
         .then(response => {
             setState(response.data);
             console.log(response.data)
