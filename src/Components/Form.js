@@ -88,7 +88,7 @@ const Form = () => {
             "agree":agree,
             "file":file
         }
-        console.log(obj)
+        
         axios.post('http://localhost:5000/add', obj)
            .then(
     
