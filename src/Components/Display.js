@@ -21,15 +21,15 @@ const Display = (props) => {
     return (
     <div className='display-data'>
         
-        Your details:<br></br>
+        Your details: <br></br>
         
-        First Name:{state.firstname}<br></br>
+        First Name: {state.firstname}<br></br>
     
-        Last Name:{state.lastname}<br></br>
-        Mobile:{state.mobile}<br></br>
-        Email:{state.email}<br></br>
-        Course selected:{state.course}<br></br>
-        Dob:{state.dob}<br></br>
+        Last Name: {state.lastname}<br></br>
+        Mobile: {state.mobile}<br></br>
+        Email: {state.email}<br></br>
+        Course selected: {state.course}<br></br>
+        Dob: {state.dob}<br></br>
         <button onClick={() => {navigate('/profile')}}>Back</button>
         
 
