@@ -11,13 +11,13 @@ import Display from './Components/Display';
 
 function App() {
   
-  const [loggedIn,setLoggedIn]=useState(true);
-  const em=JSON.parse(localStorage.getItem("user")).email
-  const dispatch=useDispatch();
+  const [loggedIn,setLoggedIn] = useState(true);
+  const em = JSON.parse(localStorage.getItem("user")).email
+  const dispatch = useDispatch();
  
   useEffect(() => {
     dispatch(login(localStorage.getItem("user")))
-    auth.onAuthStateChanged((user) =>{
+    auth.onAuthStateChanged((user) => {
     if(user)
     {
       return (setLoggedIn(true));
