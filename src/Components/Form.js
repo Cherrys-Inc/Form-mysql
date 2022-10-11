@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { FilePicker } from 'evergreen-ui';
 import "./form.css"
 const Form = () => {
-    const [firstname, setFirstname] = useState("");
-    const [lastname, setLastname] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [mobile, setMobile] = useState("");
     const [dob, setDob] = useState(new Date());
@@ -28,13 +28,13 @@ const Form = () => {
     const handleFirstName=(e)=>{
         
         
-        setFirstname(e.target.value)
+        setFirstName(e.target.value)
         
 
     }
     const handleLastName=(e)=>{
         
-        setLastname(e.target.value)
+        setLastName(e.target.value)
         
 
     }
@@ -60,7 +60,7 @@ const Form = () => {
     }
     const display =(e)=>{
         e.preventDefault();
-       if(firstname === "")
+       if(firstName === "")
        {
            alert("Please Enter a Valid first Name")
        }
@@ -84,8 +84,8 @@ const Form = () => {
         else
         {
         const obj ={
-            "firstname":firstname,
-            "lastname":lastname,
+            "firstname":firstName,
+            "lastname":lastName,
             "email":email,
             "mobile":mobile,
             "dob":dob,
