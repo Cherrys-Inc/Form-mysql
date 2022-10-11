@@ -44,7 +44,7 @@ const Mainpage = () => {
 
     }
     const updateVerification=()=>{
-        console.log(localStorage.getItem("mobileVerified"))
+        
         if (verify === true)
         {
             localStorage.setItem("mobileVerified",true);
