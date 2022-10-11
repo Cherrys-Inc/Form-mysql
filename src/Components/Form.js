@@ -10,12 +10,12 @@ const Form = () => {
     const [email, setEmail] = useState("");
     const [mobile, setMobile] = useState("");
     const [dob, setDob] = useState(new Date());
-    const [course,setCourse]=useState("Maths");
-    const [feedback,setFeedback]=useState("");
-    const [gender,setGender]=useState("");
-    const [agree,setAgree]=useState(false);
-    const [file,setFile]=useState("");
-    const navigate=useNavigate();
+    const [course,setCourse] = useState("Maths");
+    const [feedback,setFeedback] = useState("");
+    const [gender,setGender] = useState("");
+    const [agree,setAgree] = useState(false);
+    const [file,setFile] = useState("");
+    const navigate = useNavigate();
     
     const handleChangecourse =(e)=>{
         setCourse(e.target.value)
@@ -58,7 +58,7 @@ const Form = () => {
             setAgree(!agree)
         
     }
-    const display =(e)=>{
+    const validateForm =(e)=>{
         e.preventDefault();
        if(firstName === "")
        {
@@ -108,7 +108,7 @@ const Form = () => {
     return (
         <div className="form">
             <h1>Fill your details </h1>
-          <form className="form-body" onSubmit={display}> 
+          <form className="form-body" onSubmit={validateForm}> 
               <div className="username">
                   <label className="form__label" >First Name <span className="mandatory">*</span> </label>
 
