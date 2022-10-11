@@ -20,12 +20,16 @@ const Mainpage = () => {
     
     const [viewOtpForm, setViewOtpForm] = useState(false);
     const navigate= useNavigate();
-    const name=JSON.parse(localStorage.getItem("user")).name
-    const email= JSON.parse(localStorage.getItem("user")).email
-    const uid= JSON.parse(localStorage.getItem("user")).uid
+    const localData= JSON.parse(localStorage.getItem("user"))
+    const userDetails = {
+                            name:localData.user,
+                            email:localData.email,
+                            uid:localData.uid
+                            }
+   
     
     
-    const dispatch=useDispatch();
+    const dispatch = useDispatch();
     
        
     const signOut =()=>
@@ -41,15 +45,12 @@ const Mainpage = () => {
     }
     const updateVerification=()=>{
         console.log(localStorage.getItem("mobileVerified"))
-        if (verify===true){
-            
+        if (verify === true)
+        {
             localStorage.setItem("mobileVerified",true);
-            const details=JSON.parse(localStorage.getItem("user"))
-           
-            
-            
-     }
-     dispatch(login({name:name,email:email,uid:uid,IsMobileVerified:localStorage.getItem("mobileVerified")}))
+            const details=JSON.parse(localStorage.getItem("user");    
+        }
+        dispatch(login({userDetails,IsMobileVerified:localStorage.getItem("mobileVerified")}))
        
        
 
@@ -92,8 +93,7 @@ const Mainpage = () => {
         window.confirmationResult
             .confirm(opt_number)
             .then((confirmationResult) => {
-                console.log(confirmationResult);
-                console.log("success");
+                
                 setVerify(true)
                 
                 
@@ -117,15 +117,15 @@ const Mainpage = () => {
 
                 if (data.Email === email )
                 {
-                    {console.log("Local"+localStorage.getItem("mobileVerified"))}
+                    
                 if(data.IsMobileVerified || localStorage.getItem("mobileVerified") )
                 {
                     
                     return(
                         <div>
-                        <div>Name:{data.Name}</div>
-                        <div>Email:{data.Email}</div>
-                        <div>Mobile:{data.Mobile}<img src={tick}></img></div>
+                        <div>Name: {data.Name}</div>
+                        <div>Email: {data.Email}</div>
+                        <div>Mobile: {data.Mobile}<img src={tick}></img></div>
                         
                     
                         
@@ -137,8 +137,8 @@ const Mainpage = () => {
                 {
                     return(
                 <div>
-                <div>Name:{data.Name}</div>
-                <div>Email:{data.Email}</div>
+                <div>Name: {data.Name}</div>
+                <div>Email: {data.Email}</div>
                 
                 <p className="sub-text">Verify your mobile number.</p>
                 <label id="recaptcha-container"></label>
