@@ -15,10 +15,10 @@ const Display = (props) => {
         axios.get('http://localhost:5000/display/'+params.em)
         .then(response => {
             setState(response.data);
-            console.log(response.data)
+            
         })
         .catch(function (error){
-            console.log(error);
+            
         })
     }, [0])
     return (
@@ -26,9 +26,9 @@ const Display = (props) => {
         
         Your details: <br></br>
         
-        First Name: {state.firstname}<br></br>
+        First Name: {state.firstName}<br></br>
     
-        Last Name: {state.lastname}<br></br>
+        Last Name: {state.lastName}<br></br>
         Mobile: {state.mobile}<br></br>
         Email: {state.email}<br></br>
         Course selected: {state.course}<br></br>
