@@ -6,8 +6,8 @@ import { FilePicker } from 'evergreen-ui';
 import "./form.css"
 const Form = () => {
      const [userData,setUserData] = useState({
-        firstname: "",
-        lastname: "",
+        firstName: "",
+        lastName: "",
         email: "",
         mobile: "",
         dob: new Date(),
@@ -15,7 +15,7 @@ const Form = () => {
         feedback: "",
         gender: "",
         agree: false,
-        error: {firstname: "",
+        error: {firstName: "",
             email: "",
             mobile: "",
             dob: "",
@@ -36,9 +36,9 @@ const Form = () => {
     function validate()
     {
     let error = false
-    if( userData.firstname === ""){
+    if( userData.firstName === ""){
         error=true
-        userData.error.firstname="Name field is required"
+        userData.error.firstName="Name field is required"
     }
     const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (userData.email === "" || reg.test(userData.email) === false) {
@@ -77,15 +77,15 @@ const Form = () => {
         if(!errorState)
         {
         const obj ={
-            "firstname":firstname,
-            "lastname":lastname,
-            "email":email,
-            "mobile":mobile,
-            "dob":dob,
-            "gender":gender,
-            "course":course,
-            "feedback":feedback,
-            "agree":agree,
+            "firstName":userData.firstName,
+            "lastname":userData.lastName,
+            "email":userData.email,
+            "mobile":userData.mobile,
+            "dob":userData.dob,
+            "gender":userData.gender,
+            "course":userData.course,
+            "feedback":userData.feedback,
+            "agree":userData.agree,
             "file":file
         }
         
@@ -108,7 +108,7 @@ const Form = () => {
 
                   <input className="form__input" type="text" onChange={e => setUserData({...userData, firstname: e.target.value}) } placeholder="First Name"/>
               </div>
-              <span className="text-danger">{userData.error.firstname}</span>
+              <span className="text-danger">{userData.error.firstName}</span>
               <div className="lastname">
                   <label className="form__label" >Last Name </label>
                   <input  type="text" name="" onClick={e => setUserData({...userData, lastname: e.target.value})}  className="form__input"placeholder="LastName"/>
