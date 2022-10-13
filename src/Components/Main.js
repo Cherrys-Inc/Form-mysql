@@ -140,7 +140,7 @@ const Mainpage = () => {
                 <div>Name: {data.Name}</div>
                 <div>Email: {data.Email}</div>
                 
-                <p className="sub-text">Verify your mobile number.</p>
+                <p className = "sub-text">Verify your mobile number.</p>
                 <label id="recaptcha-container"></label>
                 
                 
@@ -151,7 +151,7 @@ const Mainpage = () => {
                
                 
                 :
-                <Otp  verifyNo={verifyNo} otpSubmit={otpSubmit} viewOtpForm={viewOtpForm}/>
+                <Otp  verifyNo = {verifyNo} otpSubmit = {otpSubmit} viewOtpForm = {viewOtpForm}/>
                 
                 }  
                 {updateVerification()}
