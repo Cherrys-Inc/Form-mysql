@@ -20,8 +20,8 @@ cors = CORS(app)
 
 
 class Form(db.Model):
-    firstname = db.Column(db.String(200))
-    lastname = db.Column(db.String(200))
+    firstName = db.Column(db.String(200))
+    lastName = db.Column(db.String(200))
     email = db.Column(db.String(200),primary_key=True)
     mobile = db.Column(db.Integer)
     dob = db.Column(db.String(200))
@@ -32,8 +32,8 @@ class Form(db.Model):
 
     def to_json(self):
         return {
-            'firstname': self.firstname,
-            'lastname': self.lastname,
+            'firstName': self.firstName,
+            'lastName': self.lastName,
             'email': self.email,
             'mobile': self.mobile,
             'dob': self.dob,
@@ -49,8 +49,8 @@ class Form(db.Model):
 def create():
     form = Form()
     json_data = request.get_json(force=True)
-    form.firstname = json_data['firstname']
-    form.lastname = json_data['lastname']
+    form.firstName = json_data['firstName']
+    form.lastName = json_data['lastName']
     form.email = json_data['email']
     form.mobile = json_data['mobile']
     form.gender = json_data['gender']
