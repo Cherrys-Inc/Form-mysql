@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux';
 import "./Login.css";
 export default function Login(){
     
-    const navigate= useNavigate();
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     
     
