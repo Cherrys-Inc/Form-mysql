@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import {auth,provider,fprovider} from "../firebase"
 import { getAuth, signInWithPopup, GoogleAuthProvider ,FacebookAuthProvider} from "firebase/auth";
-import { login } from '../features/userSlice';
+import { addUser } from '../features/userSlice';
 import { useDispatch } from 'react-redux';
 
 import "./Login.css";
@@ -89,16 +89,16 @@ export default function Login(){
 
       
     return (
-        <div className="buttons-body">
+        <div className = "buttons-body">
     
                 <center>
                 <div>
-                <button className="loginBtn loginBtn--google" onClick={googleSignin}>
+                <button className = "loginBtn loginBtn--google" onClick = {googleSignin}>
                 Login with google
                 </button>
                 </div>
                 <div>
-                <button class="loginBtn loginBtn--facebook" onClick={fbSignin}>
+                <button class = "loginBtn loginBtn--facebook" onClick = {fbSignin}>
                 Login with Facebook
                 </button>
                 </div>
