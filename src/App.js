@@ -4,7 +4,7 @@ import Login from "./Components/Login";
 import { BrowserRouter as Router, Routes,Route} from 'react-router-dom';
 import Mainpage from './Components/Main';
 import { auth } from './firebase'; 
-import {login} from "./features/userSlice"
+import {addUser} from "./features/userSlice"
 import {useDispatch} from "react-redux"
 import Form from './Components/Form';
 import Display from './Components/Display';
@@ -16,7 +16,7 @@ function App() {
   const dispatch = useDispatch();
  
   useEffect(() => {
-    dispatch(login(localStorage.getItem("user")))
+    dispatch(addUser(localStorage.getItem("user")))
     auth.onAuthStateChanged((user) => {
     if(user)
     {
