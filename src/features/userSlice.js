@@ -3,20 +3,20 @@ export const userSlice= createSlice({
     name:"user",
     initialState:{user:null,mobileVerified:false},
     reducers:{
-        addUser:(state,action)=>{
+        setUser:(state,action)=>{
             state.user=action.payload;
         },
-        addVerification:(state,action)=>{
+        updateMobileVerification:(state,action)=>{
             state.mobileVerified=action.payload
         },
-        removeUser:(state)=>{
+        clearUser:(state)=>{
             state.user=null;
         }
 
     }
 })
 
-export const {addUser,removeUser,addVerification} =userSlice.actions;
+export const {setUser,clearUser,updateMobileVerification} =userSlice.actions;
 
 export const selectUser =(state) => state.user;
 
