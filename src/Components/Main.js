@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes,Route,Link} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import {auth} from "../firebase"
 import { getAuth, RecaptchaVerifier ,signInWithPhoneNumber} from 'firebase/auth';
-import {  addUser,removeUser } from '../features/userSlice';
+import {  setUser,clearUser } from '../features/userSlice';
 import { useDispatch,useSelector } from 'react-redux';
 import userData from "../UserData.json"
 import tick from "../assets/tick.png"
