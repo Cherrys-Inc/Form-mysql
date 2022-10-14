@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes,Route,Link} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import {auth} from "../firebase"
 import { getAuth, RecaptchaVerifier ,signInWithPhoneNumber} from 'firebase/auth';
-import {  logout,login } from '../features/userSlice';
+import {  addUser,removeUser } from '../features/userSlice';
 import { useDispatch,useSelector } from 'react-redux';
 import userData from "../UserData.json"
 import tick from "../assets/tick.png"
@@ -14,18 +14,18 @@ import Form from './Form';
 
 const Mainpage = () => {
     const [mobile, setMobile] = useState("")
-    let userArray=userData;
-    const otpauth= getAuth();
-    const [verify,setVerify]=useState(false)
+    let userArray = userData;
+    const otpauth = getAuth();
+    const [verify,setVerify] = useState(false)
     
     const [viewOtpForm, setViewOtpForm] = useState(false);
-    const navigate= useNavigate();
-    const localData= JSON.parse(localStorage.getItem("user"))
+    const navigate = useNavigate();
+    const localData = JSON.parse(localStorage.getItem("user"))
     const userDetails = {
-                            name:localData.user,
-                            email:localData.email,
-                            uid:localData.uid
-                            }
+        name:localData.user,
+        email:localData.email,
+        uid:localData.uid
+     }
    
     
     
@@ -38,7 +38,7 @@ const Mainpage = () => {
         otpauth.signOut();
 
         localStorage.clear()
-        dispatch(logout())
+        dispatch(removeUser())
         navigate("/")
         userArray=userData
 
@@ -62,8 +62,7 @@ const Mainpage = () => {
         window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
             "size":"invisible",
             'callback': (response) => {
-                console.log(response)
-                // ...
+               
               },
         }, otpauth);
     
@@ -74,7 +73,7 @@ const Mainpage = () => {
             .then((confirmationResult) => {
                 // SMS sent. Prompt user to type the code from the message, then sign the
                 // user in with confirmationResult.confirm(code).
-                console.log("otp sent");
+                
                 setViewOtpForm(true);
                 window.confirmationResult = confirmationResult;
                 // ...
