@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import {auth,provider,fprovider} from "../firebase"
 import { getAuth, signInWithPopup, GoogleAuthProvider ,FacebookAuthProvider} from "firebase/auth";
-import { addUser } from '../features/userSlice';
+import { setUser } from '../features/userSlice';
 import { useDispatch } from 'react-redux';
 
 import "./Login.css";
