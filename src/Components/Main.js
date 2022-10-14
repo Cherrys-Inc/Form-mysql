@@ -38,7 +38,7 @@ const Mainpage = () => {
         otpauth.signOut();
 
         localStorage.clear()
-        dispatch(removeUser())
+        dispatch(clearUser())
         navigate("/")
         userArray=userData
 
@@ -50,7 +50,7 @@ const Mainpage = () => {
             localStorage.setItem("mobileVerified",true);
             const details=JSON.parse(localStorage.getItem("user");    
         }
-        dispatch(login({userDetails,IsMobileVerified:localStorage.getItem("mobileVerified")}))
+        dispatch(setUser({userDetails,IsMobileVerified:localStorage.getItem("mobileVerified")}))
        
        
 
@@ -124,7 +124,7 @@ const Mainpage = () => {
                         <div>
                         <div>Name: {data.Name}</div>
                         <div>Email: {data.Email}</div>
-                        <div>Mobile: {data.Mobile}<img src={tick}></img></div>
+                        <div>Mobile: {data.Mobile}<img src = {tick}></img></div>
                         
                     
                         
@@ -172,7 +172,7 @@ const Mainpage = () => {
         }
         
     }))}
-            <button style={{"marginLeft" : "20px"}} 
+            <button style = {{"marginLeft" : "20px"}} 
             onClick={signOut} >
                 Logout
             </button>
